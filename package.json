@@ -2,14 +2,14 @@
   "name": "osint-toolkit",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "frontend"
+  ],
   "scripts": {
-    "dev": "cd frontend && npm run dev",
-    "build": "cd frontend && npm install && npm run build",
-    "start": "cd frontend && npm start",
-    "lint": "cd frontend && npm run lint"
-  },
-  "dependencies": {
-    "next": "14.0.4"
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend start",
+    "lint": "npm --prefix frontend run lint"
   },
   "engines": {
     "node": ">=16.0.0"
