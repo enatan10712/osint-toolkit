@@ -14,7 +14,6 @@ from services.whois_lookup import whois_lookup
 from services.exif_extractor import extract_exif
 from services.report_generator import generate_pdf_report
 from services.search_history import SearchHistory
-from services.reverse_image_search import reverse_image_search
 # WiFi features removed per user request
 from services.ss7_intelligence import ss7_intelligence_gathering, get_phone_intelligence
 from services.ss7_enhanced import ss7_professional_analysis
@@ -208,19 +207,6 @@ async def clear_search_history():
 async def delete_search(search_id: str):
     search_history.delete_search(search_id)
     return {"success": True, "message": "Search deleted"}
-
-# Reverse Image Search
-@app.post("/api/reverse-image-search")
-async def search_reverse_image(file: UploadFile = File(...)):
-    try:
-        contents = await file.read()
-        # Use Google reverse image search
-        from services.google_reverse_image import reverse_image_search as google_reverse_search
-        return await google_reverse_search(contents, file.filename)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    finally:
-        await file.close()
 
 # WiFi features removed - focusing on legal OSINT tools
 

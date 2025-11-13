@@ -27,7 +27,6 @@ const menuItems = [
   { id: 'ip', label: 'IP Lookup', icon: MapPin },
   { id: 'whois', label: 'WHOIS Lookup', icon: FileText },
   { id: 'exif', label: 'EXIF Extractor', icon: Image },
-  { id: 'reverse-image', label: 'Reverse Image', icon: Image },
   { id: 'ss7', label: 'SS7 Intelligence', icon: Shield },
   { id: 'phone-intel', label: 'Phone Intel', icon: User },
   { id: 'email-intel', label: 'Email Intel', icon: Mail },

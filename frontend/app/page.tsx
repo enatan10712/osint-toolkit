@@ -9,10 +9,10 @@ import DomainScanner from '@/components/tools/DomainScanner'
 import IPLookup from '@/components/tools/IPLookup'
 import WhoisLookup from '@/components/tools/WhoisLookup'
 import ExifExtractor from '@/components/tools/ExifExtractor'
-import ReverseImageSearch from '@/components/tools/ReverseImageSearch'
 import SearchHistory from '@/components/tools/SearchHistory'
 import AnalystMode from '@/components/tools/AnalystMode'
 import Header from '@/components/Header'
+import ComingSoon from '@/components/ComingSoon'
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard')
@@ -34,7 +34,7 @@ export default function Home() {
       case 'exif':
         return <ExifExtractor />
       case 'reverse-image':
-        return <ReverseImageSearch />
+        return <ComingSoon title="Reverse Image Search" description="This feature is coming soon. Stay tuned!" />
       case 'history':
         return <SearchHistory />
       case 'analyst':
