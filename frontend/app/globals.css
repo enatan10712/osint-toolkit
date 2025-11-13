@@ -6,11 +6,99 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  .cyber {
+    --background: 210 32% 5%;
+    --foreground: 183 100% 50%;
+    --primary: 183 100% 50%;
+    --primary-foreground: 210 32% 5%;
+    --muted: 210 32% 8%;
+    --muted-foreground: 183 30% 50%;
+    --accent: 210 32% 8%;
+    --accent-foreground: 183 100% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 183 100% 50%;
+    --border: 210 32% 15%;
+    --input: 210 32% 15%;
+    --ring: 183 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-cyber-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyber-blue/30 rounded-full hover:bg-cyber-blue/50 transition-colors;
+  }
+  
+  /* Selection */
+  ::selection {
+    @apply bg-cyber-blue/20 text-cyber-blue;
+  }
+  
+  /* Cyber theme specific */
+  .cyber {
+    @apply bg-cyber-darker text-cyber-blue;
+  }
+  
+  /* Animations */
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+  }
+  
+  @keyframes flicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.6; }
+  }
+  
+  @keyframes pulse-cyber {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 240, 255, 0); }
   }
 }
 
@@ -18,6 +106,43 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .cyber-glow {
+    @apply relative before:absolute before:inset-0 before:bg-cyber-blue/10 before:rounded-lg before:pointer-events-none before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+  }
+  
+  .cyber-border {
+    @apply relative border border-cyber-blue/20 hover:border-cyber-blue/40 transition-colors duration-300;
+  }
+  
+  .cyber-button {
+    @apply px-6 py-2.5 bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue rounded-md font-medium hover:bg-cyber-blue/20 hover:border-cyber-blue/50 transition-all duration-300 shadow-lg shadow-cyber-blue/10 hover:shadow-cyber-blue/20;
+  }
+  
+  .cyber-input {
+    @apply w-full px-4 py-2.5 bg-cyber-darker/50 border border-cyber-blue/20 rounded-md text-cyber-blue placeholder-cyber-blue/50 focus:outline-none focus:ring-2 focus:ring-cyber-blue/50 focus:border-cyber-blue/50 transition-all duration-300;
+  }
+  
+  .cyber-card {
+    @apply bg-cyber-darker/50 border border-cyber-blue/10 rounded-lg p-6 shadow-lg shadow-cyber-blue/5 hover:shadow-cyber-blue/10 transition-all duration-300;
+  }
+  
+  .cyber-tab {
+    @apply px-4 py-2 text-sm font-medium rounded-md transition-all duration-300;
+  }
+  
+  .cyber-tab-active {
+    @apply bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20;
+  }
+  
+  .cyber-tab-inactive {
+    @apply text-cyber-blue/60 hover:text-cyber-blue hover:bg-cyber-blue/5;
+  }
+  
+  .cyber-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-cyber-blue/10 text-cyber-blue border border-cyber-blue/20;
+  }
+}
 }
 
 /* Custom scrollbar */

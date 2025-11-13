@@ -1,26 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        cyber: {
-          dark: '#0a0e27',
-          darker: '#05070f',
-          blue: '#00d4ff',
-          purple: '#9d4edd',
-          pink: '#ff006e',
-          green: '#00ff88',
-        },
+        'cyber-dark': '#0a0e17',
+        'cyber-darker': '#05080f',
+        'cyber-blue': '#00f0ff',
+        'cyber-blue-dark': '#00a8b5',
+        'cyber-pink': '#ff2d75',
+        'cyber-purple': '#7928ca',
+      },
+      fontFamily: {
+        'sans': ['Inter', 'sans-serif'],
+        'mono': ['Fira Code', 'monospace'],
+      },
+      boxShadow: {
+        'cyber': '0 0 15px rgba(0, 240, 255, 0.5)',
+        'cyber-sm': '0 0 5px rgba(0, 240, 255, 0.5)',
+        'cyber-lg': '0 0 25px rgba(0, 240, 255, 0.7)',
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'scan': 'scan 2s ease-in-out infinite',
+        'scan': 'scan 8s linear infinite',
+        'flicker': 'flicker 8s infinite',
         'glow': 'glow 2s ease-in-out infinite',
         'float': 'float 3s ease-in-out infinite',
       },
