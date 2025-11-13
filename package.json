@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "frontend:dev": "cd frontend && npm run dev",
-    "frontend:build": "cd frontend && npm install && npm run build",
-    "frontend:start": "cd frontend && npm start"
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm install && npm run build",
+    "start": "cd frontend && npm start",
+    "lint": "cd frontend && npm run lint"
+  },
+  "dependencies": {
+    "next": "14.0.4"
   },
   "engines": {
     "node": ">=16.0.0"
