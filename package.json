@@ -1,0 +1,13 @@
+{
+  "name": "osint-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm install && npm run build",
+    "frontend:start": "cd frontend && npm start"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
