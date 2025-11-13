@@ -1,65 +1,56 @@
-'use client'
-
 'use client';
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-
-// Dynamically import components with no SSR
-const Sidebar = dynamic(() => import('@/components/Sidebar'), { ssr: false });
-const Dashboard = dynamic(() => import('@/components/Dashboard'), { ssr: false });
-const Header = dynamic(() => import('@/components/Header'), { ssr: false });
-const ComingSoon = dynamic(() => import('@/components/common/ComingSoon'), { ssr: false });
-
-// Import tool components
-const UsernameLookup = dynamic(() => import('@/components/tools/UsernameLookup'), { ssr: false });
-const EmailScanner = dynamic(() => import('@/components/tools/EmailScanner'), { ssr: false });
-const DomainScanner = dynamic(() => import('@/components/tools/DomainScanner'), { ssr: false });
-const IPLookup = dynamic(() => import('@/components/tools/IPLookup'), { ssr: false });
-const WhoisLookup = dynamic(() => import('@/components/tools/WhoisLookup'), { ssr: false });
-const ExifExtractor = dynamic(() => import('@/components/tools/ExifExtractor'), { ssr: false });
-const SearchHistory = dynamic(() => import('@/components/tools/SearchHistory'), { ssr: false });
-const AnalystMode = dynamic(() => import('@/components/tools/AnalystMode'), { ssr: false });
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState('dashboard')
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'dashboard':
-        return <Dashboard onNavigate={setActiveTab} />
-      case 'username':
-        return <UsernameLookup />
-      case 'email':
-        return <EmailScanner />
-      case 'domain':
-        return <DomainScanner />
-      case 'ip':
-        return <IPLookup />
-      case 'whois':
-        return <WhoisLookup />
-      case 'exif':
-        return <ExifExtractor />
-      case 'reverse-image':
-        return <ComingSoon title="Reverse Image Search" description="This feature is coming soon. Stay tuned!" />
-      case 'history':
-        return <SearchHistory />
-      case 'analyst':
-        return <AnalystMode />
-      default:
-        return <Dashboard onNavigate={setActiveTab} />
-    }
-  }
+  const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
-    <div className="flex h-screen bg-cyber-darker dark:bg-cyber-darker overflow-hidden">
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
-        <main className="flex-1 overflow-y-auto p-6 cyber-grid">
-          {renderContent()}
-        </main>
+    <div className="min-h-screen bg-cyber-darker text-white p-8">
+      <header className="mb-8">
+        <h1 className="text-3xl font-bold text-cyber-blue">OSINT Toolkit</h1>
+        <p className="text-gray-400">Open Source Intelligence Tools</p>
+      </header>
+      
+      <div className="mb-6">
+        <div className="flex space-x-4 mb-6">
+          {['dashboard', 'username', 'email', 'domain', 'ip', 'whois', 'exif', 'reverse-image'].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-4 py-2 rounded-md ${
+                activeTab === tab
+                  ? 'bg-cyber-blue text-cyber-darker font-medium'
+                  : 'bg-cyber-dark hover:bg-cyber-darker/50'
+              }`}
+            >
+              {tab.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+            </button>
+          ))}
+        </div>
+
+        <div className="bg-cyber-dark p-6 rounded-lg border border-cyber-blue/20">
+          {activeTab === 'reverse-image' ? (
+            <div className="text-center py-12">
+              <h2 className="text-2xl font-bold text-cyber-blue mb-2">Coming Soon</h2>
+              <p className="text-gray-300">This feature is under development. Please check back later!</p>
+            </div>
+          ) : (
+            <div>
+              <h2 className="text-2xl font-bold text-cyber-blue mb-4">
+                {activeTab.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+              </h2>
+              <p className="text-gray-300">
+                This is a placeholder for the {activeTab.split('-').join(' ')} functionality.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
+      
+      <footer className="mt-12 text-center text-gray-500 text-sm">
+        <p>OSINT Toolkit &copy; {new Date().getFullYear()}</p>
+      </footer>
     </div>
-  )
+  );
 }
