@@ -1,9 +1,221 @@
 /* Global Styles for THE GOD EYE OSINT Platform */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Audiowide&family=Press+Start+2P&display=swap');
 
 /* Tailwind Directives - Must be first */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.5);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(0, 240, 255, 0.3);
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8);
+}
+
+/* Global Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glitch {
+  0% { text-shadow: 0.05em 0 0 #00f0ff, -0.05em -0.025em 0 #ff2d75, -0.025em 0.05em 0 #7928ca; }
+  14% { text-shadow: 0.05em 0 0 #00f0ff, -0.05em -0.025em 0 #ff2d75, -0.025em 0.05em 0 #7928ca; }
+  15% { text-shadow: -0.05em -0.025em 0 #00f0ff, 0.025em 0.025em 0 #ff2d75, -0.05em -0.05em 0 #7928ca; }
+  49% { text-shadow: -0.05em -0.025em 0 #00f0ff, 0.025em 0.025em 0 #ff2d75, -0.05em -0.05em 0 #7928ca; }
+  50% { text-shadow: 0.025em 0.05em 0 #00f0ff, 0.05em 0 0 #ff2d75, 0 -0.05em 0 #7928ca; }
+  99% { text-shadow: 0.025em 0.05em 0 #00f0ff, 0.05em 0 0 #ff2d75, 0 -0.05em 0 #7928ca; }
+  100% { text-shadow: -0.025em 0 0 #00f0ff, -0.025em -0.025em 0 #ff2d75, -0.025em -0.05em 0 #7928ca; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.99; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes pulse-cyber {
+  0%, 100% { 
+    box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+  }
+  50% { 
+    box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+    text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff;
+  }
+}
+
+/* Cyberpunk UI Elements */
+.cyber-button {
+  @apply relative px-6 py-3 font-bold text-cyber-blue bg-cyber-darker border-2 border-cyber-blue rounded-none transition-all duration-300;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  overflow: hidden;
+}
+
+.cyber-button::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-cyber-blue;
+  transform: translateX(-100%) skew(-45deg);
+  transition: all 0.5s ease;
+}
+
+.cyber-button:hover::before {
+  transform: translateX(100%) skew(-45deg);
+}
+
+.cyber-button:hover {
+  @apply bg-cyber-blue text-cyber-darker shadow-cyber-glow;
+  transform: translateY(-2px);
+}
+
+.cyber-input {
+  @apply w-full px-4 py-3 bg-cyber-darker border-2 border-cyber-blue text-cyber-blue placeholder-cyber-blue/50 outline-none transition-all duration-300;
+  font-family: 'Rajdhani', sans-serif;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.1), inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.cyber-input:focus {
+  @apply border-cyber-pink shadow-neon-pink;
+  box-shadow: 0 0 15px rgba(255, 45, 117, 0.5), inset 0 0 10px rgba(255, 45, 117, 0.2);
+}
+
+.cyber-card {
+  @apply relative p-6 bg-cyber-darker/80 border-2 border-cyber-blue transition-all duration-300;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  overflow: hidden;
+}
+
+.cyber-card::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue via-cyber-pink to-cyber-purple;
+  animation: scanline 8s linear infinite;
+}
+
+.cyber-card:hover {
+  @apply border-cyber-pink shadow-cyber-glow-pink;
+  transform: translateY(-5px);
+}
+
+/* Cyberpunk Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-orbitron tracking-wider;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+h1 { @apply text-5xl md:text-6xl lg:text-7xl; }
+h2 { @apply text-4xl md:text-5xl lg:text-6xl; }
+h3 { @apply text-3xl md:text-4xl lg:text-5xl; }
+
+/* Cyberpunk UI Elements */
+.cyber-badge {
+  @apply inline-flex items-center px-3 py-1 text-xs font-bold rounded-full bg-cyber-darker border border-cyber-blue text-cyber-blue;
+  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 240, 255, 0.3);
+}
+
+.cyber-tab {
+  @apply px-4 py-2 font-bold border-b-2 border-transparent transition-all duration-300;
+  color: rgba(0, 240, 255, 0.6);
+}
+
+.cyber-tab-active {
+  @apply border-cyber-blue text-cyber-blue;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+}
+
+.cyber-tab:hover {
+  @apply text-cyber-blue;
+}
+
+/* Cyberpunk Grid Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  position: relative;
+  z-index: 0;
+}
+
+.cyber-grid::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-b from-transparent via-cyber-darker/50 to-transparent;
+  z-index: -1;
+}
+
+/* Cyberpunk Glitch Effect */
+.glitch {
+  position: relative;
+  animation: glitch 1s linear infinite;
+}
+
+/* Cyberpunk Terminal Effect */
+.cyber-terminal {
+  @apply p-6 font-mono text-sm text-cyber-blue bg-cyber-darker border-2 border-cyber-blue;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-terminal::before {
+  content: '';
+  @apply absolute inset-0 bg-cyber-blue/5;
+  background-image: 
+    linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.1) 50%),
+    linear-gradient(to right, rgba(0, 240, 255, 0.05), rgba(0, 240, 255, 0.1), rgba(0, 240, 255, 0.05));
+  background-size: 100% 4px, 100% 100%;
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Cyberpunk Loader */
+.cyber-loader {
+  @apply relative w-12 h-12 border-4 border-cyber-blue border-t-cyber-pink border-r-cyber-purple rounded-full;
+  animation: spin 1s linear infinite;
+}
+
+.cyber-loader::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-full border-4 border-transparent border-t-cyber-blue border-r-cyber-pink rounded-full;
+  animation: spin 2s linear infinite;
+  opacity: 0.7;
+}
+
+.cyber-loader::after {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-full border-4 border-transparent border-t-cyber-purple border-r-cyber-blue rounded-full;
+  animation: spin 3s linear infinite reverse;
+  opacity: 0.5;
+}
 
 @layer base {
   :root {
