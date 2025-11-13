@@ -1,0 +1,539 @@
+[
+  {
+    "id": "7a00c8e8-1f73-443b-9b99-113e6212c3d4",
+    "type": "whois",
+    "query": "google.com",
+    "timestamp": "2025-11-13T13:34:24.666664",
+    "results_summary": {
+      "type": "whois",
+      "success": true,
+      "registrar": "MarkMonitor, Inc.",
+      "age_days": 10286
+    },
+    "full_results": {
+      "domain": "google.com",
+      "timestamp": "2025-11-13T13:34:24.666664",
+      "whois": {
+        "domain_name": "GOOGLE.COM",
+        "registrar": "MarkMonitor, Inc.",
+        "creation_date": "1997-09-15T04:00:00",
+        "expiration_date": "2028-09-14T04:00:00",
+        "updated_date": "2019-09-09T15:39:04",
+        "status": [
+          "clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited",
+          "clientTransferProhibited https://icann.org/epp#clientTransferProhibited",
+          "clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited",
+          "serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited",
+          "serverTransferProhibited https://icann.org/epp#serverTransferProhibited",
+          "serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited",
+          "clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)",
+          "clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)",
+          "clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)",
+          "serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)",
+          "serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)",
+          "serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)"
+        ],
+        "name_servers": [
+          "NS1.GOOGLE.COM",
+          "NS2.GOOGLE.COM",
+          "NS3.GOOGLE.COM",
+          "NS4.GOOGLE.COM",
+          "ns3.google.com",
+          "ns2.google.com",
+          "ns1.google.com",
+          "ns4.google.com"
+        ],
+        "emails": [
+          "abusecomplaints@markmonitor.com",
+          "whoisrequest@markmonitor.com"
+        ],
+        "org": "Google LLC",
+        "country": "US"
+      },
+      "dns_records": {
+        "A": [
+          "142.250.202.174"
+        ],
+        "AAAA": [
+          "2a00:1450:4018:80b::200e"
+        ],
+        "MX": [
+          "10 smtp.google.com."
+        ],
+        "NS": [
+          "ns2.google.com.",
+          "ns4.google.com.",
+          "ns1.google.com.",
+          "ns3.google.com."
+        ],
+        "TXT": [
+          "\"v=spf1 include:_spf.google.com ~all\"",
+          "\"google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ\"",
+          "\"MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB\"",
+          "\"onetrust-domain-verification=de01ed21f2fa4d8781cbc3ffb89cf4ef\"",
+          "\"facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95\"",
+          "\"docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e\"",
+          "\"apple-domain-verification=30afIBcvSuDV2PLX\"",
+          "\"google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0\"",
+          "\"google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o\"",
+          "\"docusign=1b0a6754-49b1-4db5-8540-d2c12664b289\"",
+          "\"cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b\"",
+          "\"globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8=\""
+        ],
+        "CNAME": []
+      },
+      "analysis": {
+        "age_days": 10286,
+        "expires_in_days": 1035,
+        "is_active": true,
+        "has_privacy_protection": false
+      }
+    }
+  },
+  {
+    "id": "134311f0-292a-4c6e-8875-941d65926a2e",
+    "type": "username",
+    "query": "yonjocker",
+    "timestamp": "2025-11-13T13:33:51.158000",
+    "results_summary": {
+      "type": "username",
+      "success": true,
+      "platforms_found": 9,
+      "total_platforms": 20
+    },
+    "full_results": {
+      "username": "yonjocker",
+      "timestamp": "2025-11-13T13:33:45.824702",
+      "total_platforms": 20,
+      "platforms": [
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:46.485665"
+        },
+        {
+          "platform": "Twitter",
+          "url": "https://twitter.com/yonjocker",
+          "exists": false,
+          "status_code": null,
+          "error": "400, message='Got more than 8190 bytes (9869) when reading Header value is too long.', url=URL('https://twitter.com/yonjocker')",
+          "checked_at": "2025-11-13T13:33:46.460002"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/yonjocker",
+          "exists": false,
+          "status_code": null,
+          "error": "Timeout",
+          "checked_at": "2025-11-13T13:33:51.158000"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://reddit.com/user/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:47.527391"
+        },
+        {
+          "platform": "TikTok",
+          "url": "https://tiktok.com/@yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:48.553147"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/yonjocker",
+          "exists": false,
+          "status_code": 999,
+          "checked_at": "2025-11-13T13:33:47.558884"
+        },
+        {
+          "platform": "Facebook",
+          "url": "https://facebook.com/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:50.526807"
+        },
+        {
+          "platform": "Pinterest",
+          "url": "https://pinterest.com/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:49.750352"
+        },
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/@yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:49.051178"
+        },
+        {
+          "platform": "Twitch",
+          "url": "https://twitch.tv/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:46.749626"
+        },
+        {
+          "platform": "Discord",
+          "url": "https://discord.com/users/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:46.118437"
+        },
+        {
+          "platform": "Telegram",
+          "url": "https://t.me/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:46.305756"
+        },
+        {
+          "platform": "Medium",
+          "url": "https://medium.com/@yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:47.002839"
+        },
+        {
+          "platform": "DeviantArt",
+          "url": "https://yonjocker.deviantart.com",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:48.657473"
+        },
+        {
+          "platform": "Behance",
+          "url": "https://behance.net/yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:48.724649"
+        },
+        {
+          "platform": "Dribbble",
+          "url": "https://dribbble.com/yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:46.668967"
+        },
+        {
+          "platform": "Patreon",
+          "url": "https://patreon.com/yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:47.601147"
+        },
+        {
+          "platform": "Snapchat",
+          "url": "https://snapchat.com/add/yonjocker",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:33:48.779380"
+        },
+        {
+          "platform": "Steam",
+          "url": "https://steamcommunity.com/id/yonjocker",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:33:46.970456"
+        },
+        {
+          "platform": "Spotify",
+          "url": "https://open.spotify.com/user/yonjocker",
+          "exists": false,
+          "status_code": null,
+          "error": "Timeout",
+          "checked_at": "2025-11-13T13:33:51.158000"
+        }
+      ],
+      "found_on": [
+        "Reddit",
+        "TikTok",
+        "Facebook",
+        "Pinterest",
+        "Twitch",
+        "Discord",
+        "Telegram",
+        "Medium",
+        "Steam"
+      ],
+      "statistics": {
+        "total_checked": 20,
+        "found": 9,
+        "not_found": 8,
+        "errors": 3
+      }
+    }
+  },
+  {
+    "id": "71e5e018-64a0-487a-87f1-f68875193629",
+    "type": "email",
+    "query": "enatan10712@gmail.com",
+    "timestamp": "2025-11-13T13:32:49.167290",
+    "results_summary": {
+      "type": "email",
+      "success": true,
+      "breaches_found": 3,
+      "risk_level": "HIGH"
+    },
+    "full_results": {
+      "email": "enatan10712@gmail.com",
+      "domain": "gmail.com",
+      "valid": true,
+      "timestamp": "2025-11-13T13:32:49.167290",
+      "breach_data": {
+        "breaches_found": true,
+        "breach_count": 3,
+        "breaches": [
+          {
+            "name": "LinkedIn",
+            "title": "LinkedIn",
+            "domain": "linkedin.com",
+            "breach_date": "2021-06-22",
+            "added_date": "2021-06-22",
+            "modified_date": "2021-06-22",
+            "pwn_count": 700000000,
+            "description": "In June 2021, data scraped from 700M LinkedIn users was made available for sale.",
+            "data_classes": [
+              "Email addresses",
+              "Full names",
+              "Phone numbers",
+              "Physical addresses"
+            ]
+          },
+          {
+            "name": "Collection1",
+            "title": "Collection #1",
+            "domain": "N/A",
+            "breach_date": "2019-01-07",
+            "added_date": "2019-01-16",
+            "modified_date": "2019-01-16",
+            "pwn_count": 773000000,
+            "description": "Collection #1 is a set of email addresses and passwords totalling 2,692,818,238 rows.",
+            "data_classes": [
+              "Email addresses",
+              "Passwords"
+            ]
+          },
+          {
+            "name": "Dropbox",
+            "title": "Dropbox",
+            "domain": "dropbox.com",
+            "breach_date": "2012-07-01",
+            "added_date": "2016-08-31",
+            "modified_date": "2016-08-31",
+            "pwn_count": 68000000,
+            "description": "In mid-2012, Dropbox suffered a data breach which exposed 68 million records.",
+            "data_classes": [
+              "Email addresses",
+              "Passwords"
+            ]
+          }
+        ],
+        "pastes": [],
+        "risk_score": 85,
+        "risk_level": "HIGH"
+      },
+      "email_reputation": {
+        "disposable": false,
+        "free_provider": true,
+        "business": false
+      },
+      "recommendations": [
+        "Change your password immediately",
+        "Enable two-factor authentication",
+        "Monitor your accounts for suspicious activity"
+      ]
+    }
+  },
+  {
+    "id": "9befafe5-6f00-4a9e-a063-d1553327953a",
+    "type": "username",
+    "query": "pablo",
+    "timestamp": "2025-11-13T13:32:16.443975",
+    "results_summary": {
+      "type": "username",
+      "success": true,
+      "platforms_found": 18,
+      "total_platforms": 20
+    },
+    "full_results": {
+      "username": "pablo",
+      "timestamp": "2025-11-13T13:32:11.980955",
+      "total_platforms": 20,
+      "platforms": [
+        {
+          "platform": "GitHub",
+          "url": "https://github.com/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:12.829914"
+        },
+        {
+          "platform": "Twitter",
+          "url": "https://twitter.com/pablo",
+          "exists": false,
+          "status_code": null,
+          "error": "400, message='Got more than 8190 bytes (9869) when reading Header value is too long.', url=URL('https://twitter.com/pablo')",
+          "checked_at": "2025-11-13T13:32:12.659472"
+        },
+        {
+          "platform": "Instagram",
+          "url": "https://instagram.com/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:15.887398"
+        },
+        {
+          "platform": "Reddit",
+          "url": "https://reddit.com/user/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:16.443975"
+        },
+        {
+          "platform": "TikTok",
+          "url": "https://tiktok.com/@pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:13.794474"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "https://linkedin.com/in/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.191370"
+        },
+        {
+          "platform": "Facebook",
+          "url": "https://facebook.com/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:15.669423"
+        },
+        {
+          "platform": "Pinterest",
+          "url": "https://pinterest.com/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.455253"
+        },
+        {
+          "platform": "YouTube",
+          "url": "https://youtube.com/@pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:15.308029"
+        },
+        {
+          "platform": "Twitch",
+          "url": "https://twitch.tv/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.953151"
+        },
+        {
+          "platform": "Discord",
+          "url": "https://discord.com/users/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:12.988069"
+        },
+        {
+          "platform": "Telegram",
+          "url": "https://t.me/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:12.667724"
+        },
+        {
+          "platform": "Medium",
+          "url": "https://medium.com/@pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:12.874732"
+        },
+        {
+          "platform": "DeviantArt",
+          "url": "https://pablo.deviantart.com",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.477827"
+        },
+        {
+          "platform": "Behance",
+          "url": "https://behance.net/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:13.407146"
+        },
+        {
+          "platform": "Dribbble",
+          "url": "https://dribbble.com/pablo",
+          "exists": false,
+          "status_code": 404,
+          "checked_at": "2025-11-13T13:32:12.964798"
+        },
+        {
+          "platform": "Patreon",
+          "url": "https://patreon.com/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.695063"
+        },
+        {
+          "platform": "Snapchat",
+          "url": "https://snapchat.com/add/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:14.325685"
+        },
+        {
+          "platform": "Steam",
+          "url": "https://steamcommunity.com/id/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:13.333783"
+        },
+        {
+          "platform": "Spotify",
+          "url": "https://open.spotify.com/user/pablo",
+          "exists": true,
+          "status_code": 200,
+          "checked_at": "2025-11-13T13:32:13.873530"
+        }
+      ],
+      "found_on": [
+        "GitHub",
+        "Instagram",
+        "Reddit",
+        "TikTok",
+        "LinkedIn",
+        "Facebook",
+        "Pinterest",
+        "YouTube",
+        "Twitch",
+        "Discord",
+        "Telegram",
+        "Medium",
+        "DeviantArt",
+        "Behance",
+        "Patreon",
+        "Snapchat",
+        "Steam",
+        "Spotify"
+      ],
+      "statistics": {
+        "total_checked": 20,
+        "found": 18,
+        "not_found": 1,
+        "errors": 1
+      }
+    }
+  }
+]
