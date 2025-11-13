@@ -82,31 +82,6 @@ module.exports = {
           'neon-green': '#39ff14',
           'dark-purple': '#3a0ca3',
         },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
@@ -119,6 +94,7 @@ module.exports = {
         'audiowide': ['Audiowide', 'cursive'],
       },
       boxShadow: {
+        // Theme-based shadows
         'neon-blue': '0 0 5px theme("colors.cyber.blue"), 0 0 10px theme("colors.cyber.blue")',
         'neon-pink': '0 0 5px theme("colors.cyber.pink"), 0 0 10px theme("colors.cyber.pink")',
         'neon-purple': '0 0 5px theme("colors.cyber.purple"), 0 0 10px theme("colors.cyber.purple")',
@@ -128,11 +104,7 @@ module.exports = {
         'matrix-glow': '0 0 5px theme("colors.matrix-green"), 0 0 10px theme("colors.matrix-green")',
         'hacker-glow': '0 0 10px theme("colors.hacker-green"), 0 0 20px theme("colors.hacker-green")',
         'hacker-glow-blue': '0 0 10px theme("colors.hacker-blue"), 0 0 20px theme("colors.hacker-blue")',
-        'hacker-glow-red': '0 0 10px theme("colors.hacker-red"), 0 0 20px theme("colors.hacker-red")',
-        'neon-green': '0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14',
-        'cyber-glow': '0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 15px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff',
-        'cyber-glow-pink': '0 0 5px #ff2d75, 0 0 10px #ff2d75, 0 0 15px #ff2d75, 0 0 20px #ff2d75, 0 0 30px #ff2d75',
-        'cyber-glow-purple': '0 0 5px #7928ca, 0 0 10px #7928ca, 0 0 15px #7928ca, 0 0 20px #7928ca, 0 0 30px #7928ca',
+        'hacker-glow-red': '0 0 10px theme("colors.hacker-red"), 0 0 20px theme("colors.hacker-red")'
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -142,7 +114,6 @@ module.exports = {
         'float': 'float 3s ease-in-out infinite',
         'spin-slow': 'spin 3s linear infinite',
         'bounce-slow': 'bounce 2s infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'glow-pulse': 'glowPulse 2s ease-in-out infinite',
         'neon-flicker': 'flicker 4s linear infinite',
         'text-flicker': 'textFlicker 3s linear infinite',
@@ -153,7 +124,7 @@ module.exports = {
         'terminal-blink': 'terminalBlink 1s step-end infinite',
         'hacker-typing': 'typing 3.5s steps(40, end) infinite',
         'binary-rain': 'binaryRain 10s linear infinite',
-        'signal-wave': 'signalWave 2s ease-in-out infinite',
+        'signal-wave': 'signalWave 2s ease-in-out infinite'
       },
       keyframes: {
         scan: {
@@ -196,8 +167,8 @@ module.exports = {
             'box-shadow': '0 0 10px 0px theme("colors.cyber.pink"), 0 0 20px 2px theme("colors.cyber.pink")',
             clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
             opacity: 0.8,
-          },
-          },
+          }
+        },
         },
         'glitch': {
           '0%': { 
