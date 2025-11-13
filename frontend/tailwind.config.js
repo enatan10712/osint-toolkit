@@ -127,15 +127,58 @@ module.exports = {
         'signal-wave': 'signalWave 2s ease-in-out infinite'
       },
       keyframes: {
+        // Scan animation
         scan: {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(100%)' },
         },
+        // Glow pulse animation
         glowPulse: {
-          '0%, 100%': { 'text-shadow': '0 0 5px theme("colors.cyber.blue"), 0 0 10px theme("colors.cyber.blue")' },
-          '50%': { 'text-shadow': '0 0 10px theme("colors.cyber.blue"), 0 0 20px theme("colors.cyber.blue")' },
+          '0%, 100%': { 
+            'text-shadow': '0 0 5px theme("colors.cyber.blue"), 0 0 10px theme("colors.cyber.blue")',
+            'box-shadow': '0 0 5px theme("colors.cyber.blue"), 0 0 10px theme("colors.cyber.blue")'
+          },
+          '50%': { 
+            'text-shadow': '0 0 10px theme("colors.cyber.blue"), 0 0 20px theme("colors.cyber.blue")',
+            'box-shadow': '0 0 10px theme("colors.cyber.blue"), 0 0 20px theme("colors.cyber.blue")'
+          },
         },
+        // Flicker animation
         flicker: {
+          '0%, 100%': { opacity: 0.99 },
+          '50%': { opacity: 0.6 },
+        },
+        // Float animation
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        // Glitch animation
+        glitch: {
+          '0%': { 
+            textShadow: '0.05em 0 0 #00f0ff, -0.05em -0.025em 0 #ff2d75, -0.025em 0.05em 0 #7928ca' 
+          },
+          '14%': { 
+            textShadow: '0.05em 0 0 #00f0ff, -0.05em -0.025em 0 #ff2d75, -0.025em 0.05em 0 #7928ca' 
+          },
+          '15%': { 
+            textShadow: '-0.05em -0.025em 0 #00f0ff, 0.025em 0.025em 0 #ff2d75, -0.05em -0.05em 0 #7928ca' 
+          },
+          '49%': { 
+            textShadow: '-0.05em -0.025em 0 #00f0ff, 0.025em 0.025em 0 #ff2d75, -0.05em -0.05em 0 #7928ca' 
+          },
+          '50%': { 
+            textShadow: '0.025em 0.05em 0 #00f0ff, 0.05em 0 0 #ff2d75, 0 -0.05em 0 #7928ca' 
+          },
+          '99%': { 
+            textShadow: '0.025em 0.05em 0 #00f0ff, 0.05em 0 0 #ff2d75, 0 -0.05em 0 #7928ca' 
+          },
+          '100%': { 
+            textShadow: '-0.025em 0 0 #00f0ff, -0.025em -0.025em 0 #ff2d75, -0.025em -0.05em 0 #7928ca' 
+          }
+        },
+        // Flicker effect for cyberpunk elements
+        cyberFlicker: {
           '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
             opacity: 0.99,
             'text-shadow': '0 0 10px theme("colors.cyber.blue"), 0 0 20px theme("colors.cyber.blue")',

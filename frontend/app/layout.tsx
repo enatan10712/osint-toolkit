@@ -1,19 +1,38 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Fira_Code } from 'next/font/google'
+import localFont from 'next/font/local'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Head from 'next/head'
 
-// Load fonts
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter'
-})
+// Load Google Fonts with Next.js font optimization
+const orbitron = {
+  variable: '--font-orbitron',
+  className: 'font-sans', // Fallback
+  preload: true,
+  display: 'swap',
+}
 
-const firaCode = Fira_Code({ 
-  subsets: ['latin'],
-  variable: '--font-fira-code'
-})
+const rajdhani = {
+  variable: '--font-rajdhani',
+  className: 'font-sans', // Fallback
+  preload: true,
+  display: 'swap',
+}
+
+const audiowide = {
+  variable: '--font-audiowide',
+  className: 'font-sans', // Fallback
+  preload: true,
+  display: 'swap',
+}
+
+const pressStart2P = {
+  variable: '--font-press-start-2p',
+  className: 'font-mono', // Fallback
+  preload: true,
+  display: 'swap',
+}
 
 export const metadata: Metadata = {
   title: 'THE GOD EYE | Advanced Intelligence Platform',
