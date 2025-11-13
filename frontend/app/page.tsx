@@ -1,18 +1,25 @@
 'use client'
 
-import { useState } from 'react'
-import Sidebar from '@/components/Sidebar'
-import Dashboard from '@/components/Dashboard'
-import UsernameLookup from '@/components/tools/UsernameLookup'
-import EmailScanner from '@/components/tools/EmailScanner'
-import DomainScanner from '@/components/tools/DomainScanner'
-import IPLookup from '@/components/tools/IPLookup'
-import WhoisLookup from '@/components/tools/WhoisLookup'
-import ExifExtractor from '@/components/tools/ExifExtractor'
-import SearchHistory from '@/components/tools/SearchHistory'
-import AnalystMode from '@/components/tools/AnalystMode'
-import Header from '@/components/Header'
-import ComingSoon from '@/components/ComingSoon'
+'use client';
+
+import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import components with no SSR
+const Sidebar = dynamic(() => import('@/components/Sidebar'), { ssr: false });
+const Dashboard = dynamic(() => import('@/components/Dashboard'), { ssr: false });
+const Header = dynamic(() => import('@/components/Header'), { ssr: false });
+const ComingSoon = dynamic(() => import('@/components/common/ComingSoon'), { ssr: false });
+
+// Import tool components
+const UsernameLookup = dynamic(() => import('@/components/tools/UsernameLookup'), { ssr: false });
+const EmailScanner = dynamic(() => import('@/components/tools/EmailScanner'), { ssr: false });
+const DomainScanner = dynamic(() => import('@/components/tools/DomainScanner'), { ssr: false });
+const IPLookup = dynamic(() => import('@/components/tools/IPLookup'), { ssr: false });
+const WhoisLookup = dynamic(() => import('@/components/tools/WhoisLookup'), { ssr: false });
+const ExifExtractor = dynamic(() => import('@/components/tools/ExifExtractor'), { ssr: false });
+const SearchHistory = dynamic(() => import('@/components/tools/SearchHistory'), { ssr: false });
+const AnalystMode = dynamic(() => import('@/components/tools/AnalystMode'), { ssr: false });
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('dashboard')
