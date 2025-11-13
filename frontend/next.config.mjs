@@ -1,17 +1,23 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
+
 const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
   swcMinify: true,
   images: {
     domains: ['localhost'],
-    unoptimized: true, // For static export
+    unoptimized: true,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
+    // Add path aliases
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': new URL('src', import.meta.url).pathname,
+      '@': path.resolve(__dirname, './'),
+      '@/components': path.resolve(__dirname, './components'),
     };
+    
+    // Important: return the modified config
     return config;
   },
   env: {
