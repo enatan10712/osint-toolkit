@@ -2,8 +2,10 @@
 const nextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: ['localhost'],
+    unoptimized: true, // For static export
   },
   webpack: (config) => {
     config.resolve.alias = {
@@ -21,6 +23,11 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // For static export
+  output: 'export',
+  distDir: 'out',
+  // Optional: Add basePath if your app is not served from the root
+  // basePath: '/frontend',
 };
 
 export default nextConfig;
