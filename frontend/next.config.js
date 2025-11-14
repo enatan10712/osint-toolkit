@@ -1,21 +1,51 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
   reactStrictMode: true,
+  output: 'standalone',
   images: {
     domains: ['localhost'],
   },
-  webpack: (config) => {
+
+  // Enable SWC minification for better performance
+  swcMinify: true,
+
+  // Configure webpack: add alias but keep Next.js default CSS handling.
+  // Do NOT add custom css loaders here — they conflict with Next's pipeline.
+  webpack: (config, { isServer }) => {
+    config.resolve = config.resolve || {};
     config.resolve.alias = {
-      ...config.resolve.alias,
+      ...(config.resolve.alias || {}),
       '@': require('path').resolve(__dirname, 'src'),
     };
     return config;
   },
-  // Add this if you're using environment variables
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
-  },
-}
 
-module.exports = nextConfig
+  // Environment variables
+  env: {
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
+  },
+
+  // Rewrite API routes for both development and production
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/:path*`,    
+      },
+    ];
+  },
+
+  experimental: {
+    serverComponentsExternalPackages: ['@tremor/react'],
+  },
+
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
+
+module.exports = nextConfig;
