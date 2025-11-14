@@ -6,15 +6,33 @@ const nextConfig = {
   },
   // Enable SWC minification for better performance
   swcMinify: true,
-  // Configure webpack
+  
+  // Configure webpack for better CSS handling
   webpack: (config, { isServer }) => {
-    // Important: return the modified config
+    // Add CSS loader configuration
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: false, // Disable CSS modules for global CSS
+          },
+        },
+        'postcss-loader',
+      ],
+    });
+    
     return config;
   },
+  
   // Environment variables
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
   },
+  
   // Rewrite API routes for both development and production
   async rewrites() {
     return [
@@ -24,25 +42,24 @@ const nextConfig = {
       },
     ];
   },
+  
   // Add output: 'standalone' for better compatibility with Vercel
   output: 'standalone',
+  
   // Enable React 18 concurrent features
   experimental: {
-    appDir: true,
     serverComponentsExternalPackages: ['@tremor/react'],
   },
+  
   // Configure TypeScript
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    // !! WARN !!
+    // Enable for production builds even with type errors (not recommended for production)
     ignoreBuildErrors: false,
   },
+  
   // Configure ESLint
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    // Allow production builds even with ESLint errors
     ignoreDuringBuilds: true,
   },
 };
