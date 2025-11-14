@@ -242,9 +242,8 @@ h3 {
 
 /* Cyberpunk Grid Background */
 .cyber-grid {
-  background-image: 
-    linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+  /* simplified background to avoid build-time parser issues on some toolchains */
+  background-image: none;
   background-size: 50px 50px;
   position: relative;
   z-index: 0;
