@@ -2,63 +2,41 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 
-type Theme = 'dark' | 'light' | 'cyber'
+type Theme = 'dark' | 'light'
 
-interface ThemeContextType {
+const ThemeContext = createContext<{
   theme: Theme
   toggleTheme: () => void
-  setTheme: (theme: Theme) => void
-}
-
-const ThemeContext = createContext<ThemeContextType>({
-  theme: 'cyber',
+}>({
+  theme: 'dark',
   toggleTheme: () => {},
-  setTheme: () => {},
 })
 
 export const useTheme = () => useContext(ThemeContext)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('cyber')
-
-  const setTheme = (newTheme: Theme) => {
-    // Remove all theme classes
-    document.documentElement.classList.remove('dark', 'light', 'cyber')
-    // Add the new theme class
-    document.documentElement.classList.add(newTheme)
-    // Save to localStorage
-    localStorage.setItem('theme', newTheme)
-    // Update state
-    setThemeState(newTheme)
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'cyber' ? 'dark' : 'cyber')
-  }
+  const [theme, setTheme] = useState<Theme>('dark')
 
   useEffect(() => {
-    // Set initial theme
-    const savedTheme = localStorage.getItem('theme') as Theme | null
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
+    const savedTheme = localStorage.getItem('theme') as Theme
     if (savedTheme) {
       setTheme(savedTheme)
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark')
     } else {
-      setTheme(systemPrefersDark ? 'cyber' : 'light')
+      document.documentElement.classList.add('dark')
     }
   }, [])
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+    document.documentElement.classList.toggle('dark', newTheme === 'dark')
+  }
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
-      <div className={`min-h-screen transition-colors duration-300 ${
-        theme === 'cyber' 
-          ? 'bg-cyber-darker text-cyber-blue' 
-          : theme === 'dark' 
-            ? 'bg-gray-900 text-gray-100' 
-            : 'bg-gray-50 text-gray-900'
-      }`}>
-        {children}
-      </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
     </ThemeContext.Provider>
   )
 }

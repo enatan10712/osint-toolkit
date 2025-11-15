@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "builds": [
+    {
+<<<<<<< HEAD
+      "src": "frontend/package.json",
+=======
+      "src": "package.json",
+>>>>>>> 71c05a44 (fix(css): replace problematic @apply directives in globals.css with plain CSS to avoid build errors)
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+<<<<<<< HEAD
+      "dest": "/frontend/$1"
+    }
+  ],
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/.next"
+=======
+      "dest": "/"
+    }
+  ],
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_API_URL": "https://your-production-api-url.com"
+    }
+  },
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "regions": ["iad1"],
+  "public": true
+>>>>>>> 71c05a44 (fix(css): replace problematic @apply directives in globals.css with plain CSS to avoid build errors)
+}
